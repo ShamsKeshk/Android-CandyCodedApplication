@@ -13,6 +13,7 @@ public class InfoActivity extends AppCompatActivity {
 
     private final String mOrlandoAddress = "geo:0,0?q=618 E South St Orlando, FL 32801";
     private final String mGoogleMapsPackage = "com.google.android.apps.maps" ;
+    private final String mPhoneNumber = "tel:0123456789";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     // ***
-    // TODO - Task 2 - Launch the Google Maps Activity
+    // Completed - Task 2 - Launch the Google Maps Activity
     // ***
     public void createMapIntent(View view){
         Uri uriAddress =Uri.parse(mOrlandoAddress);
@@ -42,6 +43,11 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     // ***
-    // TODO - Task 3 - Launch the Phone Activity
+    // Completed - Task 3 - Launch the Phone Activity
     // ***
+    public void createPhoneIntent(View view){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse(mPhoneNumber));
+        startActivity(intent);
+    }
 }
